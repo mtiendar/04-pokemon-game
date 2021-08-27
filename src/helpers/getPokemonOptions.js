@@ -2,17 +2,14 @@ import pokemonApi from "../api/pokemonApi"
 
 // *** Función para crear un arreglo de pokemons ***
 const getPokemons = () => {
-  // Creamos un arreglo con 650 posiciones
-  const pokemonsArr = Array.from(Array(650))
-  
-  // Crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
-  return pokemonsArr.map((_, index) => index + 1)
+  const pokemonsArr = Array.from(Array(650)) // Creamos un arreglo con 650 posiciones
+
+  return pokemonsArr.map((_, index) => index + 1) // Crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
 }
 
 // *** Función para hacer una mezcla aleatoria de todos los pokemons ***
 const getPokemonOptions = async() => {
-  // Hacemos que el arreglo de pokemons se muestre de manera aleatoria
-  const mixedPokemons = getPokemons().sort(() => Math.random() - 0.5)
+  const mixedPokemons = getPokemons().sort(() => Math.random() - 0.5) // Hacemos que el arreglo de pokemons se muestre de manera aleatoria
   
   const pokemons = await getPokemonNames(mixedPokemons.splice(0, 4))
 
@@ -20,9 +17,6 @@ const getPokemonOptions = async() => {
 }
 
 const getPokemonNames = async([a, b, c, d] = []) => {
-  // const resp = await pokemonApi.get(`/20`)
-  // console.log(resp.data.name, resp.data.id);
-  
   // Definiendo peticiones (Aún no las estamos mandando a llamar)
   const promiseArr = [
     pokemonApi.get(`/${a}`),
