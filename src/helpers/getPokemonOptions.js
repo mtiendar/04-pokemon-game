@@ -1,7 +1,7 @@
 import pokemonApi from "../api/pokemonApi"
 
 // *** Función para crear un arreglo de pokemons ***
-const getPokemons = () => {
+export const getPokemons = () => {
   const pokemonsArr = Array.from(Array(650)) // Creamos un arreglo con 650 posiciones
 
   return pokemonsArr.map((_, index) => index + 1) // Crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
@@ -16,7 +16,7 @@ const getPokemonOptions = async() => {
   return pokemons
 }
 
-const getPokemonNames = async([a, b, c, d] = []) => {
+export const getPokemonNames = async([a, b, c, d] = []) => {
   // Definiendo peticiones (Aún no las estamos mandando a llamar)
   const promiseArr = [
     pokemonApi.get(`/${a}`),

@@ -5,3 +5,10 @@ const pokemonApi = axios.create({
 })
 
 export default pokemonApi
+
+/**
+ * 
+ * Ligatures 
+ * 
+ * == === != !== => -> |> <|
+ */
